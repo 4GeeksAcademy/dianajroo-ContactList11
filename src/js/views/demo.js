@@ -1,43 +1,101 @@
 import React, { useState, useEffect, useContext } from "react";
-import { Link } from "react-router-dom";
-
+import { Link,useNavigate } from "react-router-dom";
 import { Context } from "../store/appContext";
 
 import "../../styles/demo.css";
 
 export const Demo = () => {
-	const { store, actions } = useContext(Context);
+	const navigate = useNavigate()
+	const {store, actions} = useContext(Context)
+	
 
-	return (
-		<div className="container">
-			<ul className="list-group">
-				{store.demo.map((item, index) => {
-					return (
-						<li
-							key={index}
-							className="list-group-item d-flex justify-content-between"
-							style={{ background: item.background }}>
-							<Link to={"/single/" + index}>
-								<span>Link to: {item.title}</span>
-							</Link>
-							{// Conditional render example
-							// Check to see if the background is orange, if so, display the message
-							item.background === "orange" ? (
-								<p style={{ color: item.initial }}>
-									Check store/flux.js scroll to the actions to see the code
-								</p>
-							) : null}
-							<button className="btn btn-success" onClick={() => actions.changeColor(index, "orange")}>
-								Change Color
-							</button>
-						</li>
-					);
-				})}
-			</ul>
-			<br />
-			<Link to="/">
-				<button className="btn btn-primary">Back home</button>
-			</Link>
-		</div>
-	);
+	const [contact, setContact] = useState({
+		full_name: store.editContact ? store.editContact.full_name : "",
+		address: store.editContact ? store.editContact.address : "",
+		phone: store.editContact ? store.editContact.phone: "" ,
+		email: store.editContact ? store.editContact.email: "" ,
+		"agenda_slug": "clisdermar"
+
+	})
+    useEffect(() => {
+        if (!store.editContact) {
+            setContact({
+                full_name: "",
+                address: "",
+                phone: "",
+                email: "",
+                "agenda_slug": "clisdermar"
+            });
+        }
+    }, [store.editContact]);
+
+	const submit = async (event)=>{
+		event.preventDefault()
+		if(store.editContact){
+			const results = await actions.sendEditContact(contact, store.editContact.id)
+
+			  //if results finished and truth value, navigate over to main page.
+			  if(results){
+                navigate("/")
+            }
+		} else {
+			
+			actions.addContact(contact)
+			
+			
+		}
+		setContact({
+			"address": "",
+			"agenda_slug": "clisdermar",
+			"email": "",
+			"full_name": "",
+			"phone": ""
+	
+		})
+	   
+	}
+	
+	useEffect(()=>{
+      console.log('El Contacto ha cambiado:', contact)
+	 
+	},[contact])
+	
+	
+
+	return <div className="body">
+              
+		
+			  
+			  <form className="formu" onSubmit={submit}>
+				 <h2>Add a New Contact</h2> 
+
+				 <div className="inp">
+					 <laber for = "name">Full Name</laber>
+					 <input type="text"  value={contact.full_name} onChange={(event)=> setContact({...contact, full_name: event.target.value })} name="name" id="name" placeholder="Full Name"/>
+
+					 <laber for = "email">Email</laber>
+					 <input type="text" value={contact.email} onChange={(event)=> setContact({...contact, email: event.target.value })} name="email" id="Email" placeholder="Email"/>
+
+					 <laber for = "phone">Phone</laber>
+					 <input type="text" value={contact.phone} onChange={(event)=> setContact({...contact, phone: event.target.value })} name="phone" id="Phone" placeholder="Phone"/>
+					 
+					 <laber for = "adress">Adress</laber>
+					 <input type="text" value={contact.address} onChange={(event)=> setContact({...contact, address: event.target.value })} name="adress" id="adress" placeholder="Enter Adress"/>
+
+					 <div className="form-txt">
+						<Link to=""> Terminos y Condiciones</Link>                 
+					 </div>
+					 
+					   <input class="btn" type="submit" value = "Save"/>
+					   <Link to="/" className="back"> Or get back to Contact</Link>  
+				  
+				 </div>
+
+
+			  </form>
+			
+			
+
+
+	</div>;
 };

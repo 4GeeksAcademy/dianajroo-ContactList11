@@ -1,0 +1,83 @@
+.cardHome{
+    height: 200px;
+    display: flex;
+    flex-direction: row;
+}
+
+.cardImg{
+    width: 160px;
+    border-radius: 50%;
+    height: 160px;
+    margin: auto;
+    margin-left: 20px;
+}
+
+.cardInf{
+    width: 200px;
+    margin-left: 100px;
+    font-size: 13px;
+
+}
+
+.fatherCard{
+    margin-bottom: 10px;
+    width: 792px; 
+    display: flex;
+    border-radius: 12px;
+    transition-property: transform;
+    transition-duration: 250ms;
+    min-height: 217px;
+    box-shadow: 0 0 20px rgb(0,0,0,0.2);
+    background-color: #EDFFF0;
+    border: 2px solid #F0FAF1;
+}
+.fatherCard:hover{
+    transform: scale(1.03);
+}
+
+.btnCard{
+    margin: 6px;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    transition-property: all;
+    transition-duration: 250ms;
+}
+.btnCard:hover{
+    background:  #51D94c;
+    border-radius: 13px;
+    width: 45px;
+    height: 45px;
+}
+
+.cardButton{
+    margin-left: 117px;
+    padding: 11px;
+    display: flex;
+    align-items: flex-start;
+}
+@media (max-width: 768px) {
+    .fatherCard {
+        width: 100%; /* Ajustar el ancho al tamaño de la pantalla */
+        flex-direction: column; /* Cambiar la dirección del flexbox para colocar los elementos en columna */
+    }
+
+    .cardImg {
+        width: 100%; /* Ajustar el ancho de la imagen al tamaño de la tarjeta */
+        height: auto; /* Ajustar la altura automáticamente */
+        border-radius: 0; /* Eliminar el radio de borde */
+        margin-left: 0; /* Eliminar el margen izquierdo */
+    }
+
+    .cardInf {
+        width: 100%; /* Ajustar el ancho del texto al tamaño de la tarjeta */
+        margin-left: 0; /* Eliminar el margen izquierdo */
+        text-align: center; /* Centrar el texto */
+    }
+
+    .cardButton {
+        margin-left: 0; /* Eliminar el margen izquierdo */
+        justify-content: center; /* Centrar los botones */
+    }
+}
