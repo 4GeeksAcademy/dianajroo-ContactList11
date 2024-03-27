@@ -29,7 +29,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 			},
 			infContact: async () => {
 				try {
-					const response = await fetch('https://playground.4geeks.com/apis/fake/contact/agenda/clisdermar')
+					const response = await fetch('https://playground.4geeks.com/apis/fake/contact/agenda/diana_contact')
 					const data = await response.json()
 					setStore({contacts: data})
 				} catch (error) {

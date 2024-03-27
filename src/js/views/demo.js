@@ -14,7 +14,7 @@ export const Demo = () => {
 		address: store.editContact ? store.editContact.address : "",
 		phone: store.editContact ? store.editContact.phone: "" ,
 		email: store.editContact ? store.editContact.email: "" ,
-		"agenda_slug": "clisdermar"
+		"agenda_slug": "diana_contact"
 
 	})
     useEffect(() => {
@@ -24,7 +24,7 @@ export const Demo = () => {
                 address: "",
                 phone: "",
                 email: "",
-                "agenda_slug": "clisdermar"
+                "agenda_slug": "diana_contact"
             });
         }
     }, [store.editContact]);
@@ -46,7 +46,7 @@ export const Demo = () => {
 		}
 		setContact({
 			"address": "",
-			"agenda_slug": "clisdermar",
+			"agenda_slug": "diana_contact",
 			"email": "",
 			"full_name": "",
 			"phone": ""
