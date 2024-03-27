@@ -11,7 +11,7 @@
 }
 .formu{
     padding: 50px 55px;
-    box-shadow: 0 0 20px rgb(0,0,0,0.2);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
     border-radius: 20px;
     text-align: left;
     width: 340px;
@@ -40,14 +40,14 @@ input{
     padding: 17px 25px;
     border-radius: 25px;
     margin-bottom: 20px;
-    background-color: #EDFFF0;
-    border: 2px solid #F0FAF1;
+    background-color: #ffedf8;
+    border: 2px solid #faf0f6;
     color:283629;
     outline: none;
 
 }
 input::placeholder{
-    color: #b5cab6;
+    color: #cab5c6;
     
 }
 .form-txt{
@@ -59,7 +59,7 @@ input::placeholder{
 
 }
 .form-txt * {
-    color:#76b28e;
+    color:#b276a1;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -72,17 +72,17 @@ input::placeholder{
     color:white;
     border:0;
     border-radius: 25px;
-    background-color: #51D94c;
-    box-shadow: 0 0 20px rgb(25, 254,0,0.4);
+    background-color: #d94c9c;
+    box-shadow: 0 0 20px rgba(254, 0, 182, 0.4);
     cursor:pointer;
 }
 .bth:hover{
-    background-color: #50e04b;
+    background-color: #e04bac;
 
 }
 
 .back{
-    color:#76b28e;
+    color:#b276a2;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;

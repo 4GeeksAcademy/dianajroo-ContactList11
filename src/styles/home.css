@@ -27,9 +27,9 @@
     transition-property: transform;
     transition-duration: 250ms;
     min-height: 217px;
-    box-shadow: 0 0 20px rgb(0,0,0,0.2);
-    background-color: #EDFFF0;
-    border: 2px solid #F0FAF1;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.147);
+    background-color: #ffedf8;
+    border: 2px solid #faf0f9;
 }
 .fatherCard:hover{
     transform: scale(1.03);
@@ -45,7 +45,7 @@
     transition-duration: 250ms;
 }
 .btnCard:hover{
-    background:  #51D94c;
+    background:  #d94cac;
     border-radius: 13px;
     width: 45px;
     height: 45px;
