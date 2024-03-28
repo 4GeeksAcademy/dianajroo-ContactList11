@@ -21,14 +21,14 @@
 
 .fatherCard{
     margin-bottom: 10px;
-    width: 792px; 
+    width: 1250px; 
     display: flex;
-    border-radius: 12px;
+   
     transition-property: transform;
     transition-duration: 250ms;
     min-height: 217px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.147);
-    background-color: #ffedf8;
+   
     border: 2px solid #faf0f9;
 }
 .fatherCard:hover{
@@ -52,7 +52,7 @@
 }
 
 .cardButton{
-    margin-left: 117px;
+    margin-left: 600px;
     padding: 11px;
     display: flex;
     align-items: flex-start;

@@ -21,17 +21,17 @@ export const Home = () => {
         <>
             {store.contacts.map((contact) => (
                 <div className="fatherCard container" key={contact.id}>
-                    <div className="cardHome">
-                        <div style={{ margin: "15px" }} >
-                            <img className="cardImg" src="https://tse3.mm.bing.net/th?id=OIP.SCTNqUAziGibd3sJgGwoywAAAA&pid=Api&P=0&h=180" alt="" />
+                    <div className="cardHome" >
+                        <div style={{ margin: "15px", }} >
+                            <img className="cardImg" src="https://tse3.mm.bing.net/th?id=OIP.SCTNqUAziGibd3sJgGwoywAAAA&pid=Api&P=0&h=180" alt="" style={{ width: '100px', height: '120px' }} />
                         </div>
                         <div className="cardInf">
                             <h4 style={{ marginTop: "10px" }}>{contact.full_name}</h4>
-                            <p> <FontAwesomeIcon icon={faLocationDot} style={{ marginRight: "8px" }} />{contact.address}</p>
-                            <p> <FontAwesomeIcon icon={faPhone} style={{ marginRight: "8px" }} />{contact.phone}</p>
-                            <p><FontAwesomeIcon icon={faEnvelope} style={{ marginRight: "8px" }} />{contact.email}</p>
+                            <p> <FontAwesomeIcon icon={faLocationDot} style={{ marginRight: "8px", color: 'grey' }} />{contact.address}</p>
+                            <p> <FontAwesomeIcon icon={faPhone} style={{ marginRight: "8px", color: 'grey' }} />{contact.phone}</p>
+                            <p><FontAwesomeIcon icon={faEnvelope} style={{ marginRight: "8px", color: 'grey' }} />{contact.email}</p>
                         </div>
-                        <div className="cardButton">
+                        <div className="cardButton" >
                             <Link to="/demo">
                                 <button className="btnCard" onClick={() => actions.editMode(contact.id)}>
                                     <FontAwesomeIcon icon={faPen} size="lg" style={{ color: "#000000" }} />
@@ -58,7 +58,7 @@ export const Home = () => {
                                 If you delete, you will lose the contact forever.
                             </div>
                             <div className="modal-footer">
-                                <button type="button" className="btn coolBtn" data-bs-dismiss="modal" onClick={() => actions.sendDeleteContact(contactToDelete)}>Delete Contact</button>
+                                <button type="button" className="btn btn-primary" data-bs-dismiss="modal" onClick={() => actions.sendDeleteContact(contactToDelete)}>Delete Contact</button>
                             </div>
                         </div>
                     </div>

@@ -7,12 +7,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    
 
 }
 .formu{
     padding: 50px 55px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    border-radius: 20px;
+   
     text-align: left;
     width: 340px;
 }
@@ -24,30 +25,30 @@
     
 }
 h2{
-    color:#283629;
+    color:#0a0a0a;
     font-size: 35px;
     display: flex;
     justify-content: center;
     text-align: center;
 }
 label{
-    color:#283629;
+    
+    color: #030303;
     font-size: 11px;
     font-weight: 600;
     margin-bottom: 15px;
 }
 input{
-    padding: 17px 25px;
-    border-radius: 25px;
+    padding: 12px 15px;
+ 
     margin-bottom: 20px;
-    background-color: #ffedf8;
-    border: 2px solid #faf0f6;
+   
     color:283629;
     outline: none;
 
 }
 input::placeholder{
-    color: #cab5c6;
+    color: #a8a7a7;
     
 }
 .form-txt{
@@ -59,7 +60,7 @@ input::placeholder{
 
 }
 .form-txt * {
-    color:#b276a1;
+    color:#202020;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
@@ -72,17 +73,17 @@ input::placeholder{
     color:white;
     border:0;
     border-radius: 25px;
-    background-color: #d94c9c;
-    box-shadow: 0 0 20px rgba(254, 0, 182, 0.4);
+   
+   
     cursor:pointer;
 }
 .bth:hover{
-    background-color: #e04bac;
+    background-color: ;
 
 }
 
 .back{
-    color:#b276a2;
+    color:#0d0c0d;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
