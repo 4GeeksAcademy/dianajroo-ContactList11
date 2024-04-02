@@ -6,20 +6,22 @@ export const Demo = () => {
 	const navigate = useNavigate()
 	const { store, actions } = useContext(Context)
 	const [contact, setContact] = useState({
-		full_name: store.editContact ? store.editContact.full_name : "",
+		// full_name: store.editContact ? store.editContact.full_name : "", // En la nueva API, full_name es remplazado por name
+		name: store.editContact ? store.editContact.name : "",
 		address: store.editContact ? store.editContact.address : "",
 		phone: store.editContact ? store.editContact.phone : "",
 		email: store.editContact ? store.editContact.email : "",
-		"agenda_slug": "diana_contact"
+		// "agenda_slug": "diana_contact" // agenda_slug ya no es necesario en el objeto
 	})
 	useEffect(() => {
 		if (!store.editContact) {
 			setContact({
-				full_name: "",
+				// full_name: "", // En la nueva API, full_name es remplazado por name
+				name: "",
 				address: "",
 				phone: "",
 				email: "",
-				"agenda_slug": "diana_contact"
+				// "agenda_slug": "diana_contact" // El agenda_slug ya no es necesario en la nueva API, ya que se lo pasamos en la URL
 			});
 		}
 	}, [store.editContact]);
@@ -36,10 +38,11 @@ export const Demo = () => {
 			navigate("/")
 		}
 		setContact({
+			"name": "",
 			"address": "",
-			"agenda_slug": "diana_contact",
+			// "agenda_slug": "diana_contact", //El agenda_slug ya no es necesario en la nueva API, ya que se lo pasamos en la URL
 			"email": "",
-			"full_name": "",
+			// "full_name": "", // En la nueva API, full_name es remplazado por name
 			"phone": ""
 		})
 	}
@@ -50,18 +53,21 @@ export const Demo = () => {
 		<form className="formu" onSubmit={submit} style={{ width: '1250px', height: '800px' }}>
 			<h2><b>Add a New Contact</b></h2>
 			<div className="inp">
-				<laber for="name">Full Name</laber>
-				<input type="text" value={contact.full_name} onChange={(event) => setContact({ ...contact, full_name: event.target.value })} name="name" id="name" placeholder="Full Name" />
-				<laber for="email">Email</laber>
+				<label htmlFor="name">Full Name</label>
+				{/* <input type="text" value={contact.full_name} onChange={(event) => setContact({ ...contact, full_name: event.target.value })} name="name" id="name" placeholder="Full Name" /> */}
+				{/* En la nueva API, full_name es remplazado por name */}
+				<input type="text" value={contact.name} onChange={(event) => setContact({ ...contact, name: event.target.value })} name="name" id="name" placeholder="Name" />
+
+				<label htmlFor="email">Email</label>
 				<input type="text" value={contact.email} onChange={(event) => setContact({ ...contact, email: event.target.value })} name="email" id="Email" placeholder="Email" />
-				<laber for="phone">Phone</laber>
+				<label htmlFor="phone">Phone</label>
 				<input type="text" value={contact.phone} onChange={(event) => setContact({ ...contact, phone: event.target.value })} name="phone" id="Phone" placeholder="Phone" />
-				<laber for="adress">Adress</laber>
+				<label htmlFor="adress">Adress</label>
 				<input type="text" value={contact.address} onChange={(event) => setContact({ ...contact, address: event.target.value })} name="adress" id="adress" placeholder="Enter Adress" />
 				<div className="form-txt">
 					<Link to=""> Terminos y Condiciones</Link>
 				</div>
-				<input class="btn-primary" type="submit" value="Save" />
+				<input className="btn-primary" type="submit" value="Save" />
 				<Link to="/" className="back"> Or get back to Contact</Link>
 			</div>
 		</form>
